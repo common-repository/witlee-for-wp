@@ -1,0 +1,593 @@
+/**
+ * All of the CSS for your public-facing functionality should be
+ * included in this file.
+ */
+
+@font-face {
+    font-family: 'Brandon Grotesque';
+    src: url('fonts/2D4639_2_0.eot?') format('eot'),
+    url('fonts/2D4639_2_0.woff') format('woff'),
+    url('fonts/2D4639_2_0.ttf') format('truetype');
+}
+
+.content,
+#content,
+.site-content {
+    position: relative;  /* this is to prevent the pop-up window from being the full width of the screen, will not work on all themes */
+}
+
+/* Text view */
+
+.witlee-hidden {
+    font-family: 'Brandon Grotesque', serif;
+}
+
+.witlee-hover-wrapper {
+    display: inline-block;
+}
+
+.witlee-hover-wrapper:hover .witlee-hidden {
+    display: block;
+}
+
+.witlee-text-link {
+    display: inline-block;
+    position: relative;
+}
+
+.witlee-hover-wrapper:hover .witlee-text-link:after,
+.witlee-hover-wrapper:hover .witlee-text-link:before {
+    bottom: -1px;
+    left: 50%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    z-index: 6000;
+}
+
+.witlee-hover-wrapper:hover .witlee-text-link:after {
+    border-color: rgba(252, 247, 243, 0);
+    border-bottom-color: #fcf7f3;
+    border-width: 10px;
+    margin-left: -10px;
+}
+.witlee-hover-wrapper:hover .witlee-text-link:before {
+    border-color: rgba(248, 238, 239, 0);
+    border-bottom-color: #f8eeef;
+    border-width: 11px;
+    margin-left: -11px;
+}
+
+
+.witlee-hidden {
+    display: none;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    background: url( 'loading.gif' ) center center no-repeat #fcf7f3;
+    min-height: 200px;
+    border: 1px solid #f6eeec;
+    z-index: 5000;
+    -webkit-box-shadow: -1px -50px 0px 0px rgba(255,255,255,0); /* invisible shadow so that there isn't a gap between the text and the hover div */
+    -moz-box-shadow: -1px -50px 0px 0px rgba(255,255,255,0);
+    box-shadow: -1px -50px 0px 0px rgba(255,255,255,0);
+}
+
+.witlee-hidden.witlee-loaded {
+    background-image: none;
+}
+
+.witlee-hidden:hover {
+    display: block;
+}
+
+
+.witlee-hidden a {
+    color: #4a4a4a !important;
+    text-decoration: none;
+    box-shadow: none;
+}
+
+.witlee-hidden .witlee-popup-display {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    padding: 15px 15px 0 15px;
+    color: #4a4a4a;
+    font-size: 13px;
+    margin: 0;
+}
+
+.witlee-hidden li {
+    -webkit-flex: 1 0 auto;
+    flex: 1 0 auto;
+    list-style-type: none !important;
+}
+
+.witlee-hidden .witlee-featured {
+    flex-grow: 1.5;
+    margin-right: 20px;
+}
+
+.witlee-hidden .witlee-featured .witlee-item-name {
+    max-width: 150px;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-transform: capitalize;
+    text-align: left;
+}
+
+.witlee-hidden .witlee-related {
+    padding-top: 45px;
+    position: relative;
+}
+
+.witlee-hidden .witlee-related .witlee-item-name {
+    display: block;
+    max-width: 90px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-transform: capitalize;
+    text-align: left;
+}
+
+.witlee-hidden .witlee-related.first {
+    overflow: visible;
+}
+
+.witlee-hidden .witlee-related.first:before {
+    display: block;
+    content: 'Related\00a0Items';
+    text-transform: uppercase;
+    position: absolute;
+    top: 10px;
+    font-size: 15px;
+    text-wrap: none;
+    letter-spacing: .1em;
+}
+
+.witlee-hidden .witlee-image {
+    border: 1px solid #dedddb;
+    width: 90px;
+    height: 90px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    margin-bottom: 8px;
+}
+
+.witlee-hidden .witlee-sold-out {
+    width: 90px;
+    height: 90px;
+}
+
+.witlee-carousel .lslide {
+    position: relative;
+    height: 200px;
+    width: 200px;
+}
+
+.witlee-carousel .lslide a {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.witlee-carousel .witlee-image {
+    position: relative;
+    width: 85%;
+    height: 85%;
+    margin: 0 auto;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.witlee-sold-out {
+    opacity: 1;
+}
+
+.witlee-available {
+    display: none;
+}
+
+.witlee-hidden .witlee-featured .witlee-image {
+    width: 180px;
+    height: 180px;
+}
+.witlee-hidden .witlee-featured .witlee-sold-out {
+    width: 180px;
+    height: 180px;
+}
+
+.witlee-hidden .witlee-view-all {
+    display: none;
+}
+
+.witlee-hidden.witlee-loaded .witlee-view-all {
+    display: block;
+    position: absolute;
+    right: 15px;
+    top: 25px;
+    text-transform: lowercase;
+    text-decoration: none;
+    font-size: 15px;
+    z-index: 500;
+}
+
+.witlee-hidden .witlee-attribution {
+    display: block;
+    text-align: right;
+    font-size: 13px;
+    margin-right: 15px;
+    margin-top: -10px;
+    padding-top: 0;
+}
+
+.witlee-hidden .witlee-item-price {
+    display: block;
+    font-weight: 700;
+    text-align: left;
+}
+
+@media screen and (max-width: 450px) {
+
+    .witlee-hidden li {
+        min-width: 100px;
+    }
+    .witlee-hidden .witlee-featured {
+        flex-basis: 0%;
+        max-width: 320px;
+        border-bottom: 1px solid #dddddd;
+        margin-bottom: 10px;
+        position: relative;
+        margin-right: 0;
+    }
+
+    .witlee-hidden .witlee-featured .witlee-item-name,
+    .witlee-hidden .witlee-featured .witlee-item-price {
+        float: left;
+        font-size: 18px;
+        display: block;
+        width: 100%;
+        text-transform: capitalize;
+        text-align: left;
+    }
+
+    .witlee-hidden .witlee-featured .witlee-item-price {
+        width: 100%;
+        margin-left: 110px;
+        position: relative;
+        top: -25px;
+    }
+
+    .witlee-hidden .witlee-related .witlee-item-name {
+        max-width: 60px;
+    }
+
+    .witlee-hidden .witlee-image {
+        width: 60px;
+        height: 60px;
+    }
+    .witlee-hidden .witlee-sold-out {
+        width: 60px;
+        height: 60px;
+    }
+
+    .witlee-hidden .witlee-featured .witlee-image {
+        width: 100px;
+        height: 100px;
+        float: left;
+        margin-right: 10px;
+        margin-bottom: 25px;
+    }
+    .witlee-hidden .witlee-featured .witlee-sold-out {
+        width: 100px;
+        height: 100px;
+    }
+
+
+    .witlee-hidden.witlee-loaded .witlee-view-all {
+        top: 190px;
+    }
+
+    .witlee-hidden .witlee-attribution {
+        text-align: center;
+    }
+
+}
+
+
+/*! lightslider - v1.1.3 - 2015-04-14
+* https://github.com/sachinchoolur/lightslider
+* Copyright (c) 2015 Sachin N; Licensed MIT */
+/** /!!! core css Should not edit !!!/**/
+
+.lSSlideOuter {
+    overflow: hidden;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none
+}
+.lightSlider:before, .lightSlider:after {
+    content: " ";
+    display: table;
+}
+.lightSlider {
+    overflow: hidden;
+    margin: 0;
+}
+.lSSlideWrapper {
+    max-width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+.lSSlideWrapper > .lightSlider:after {
+    clear: both;
+}
+.lSSlideWrapper .lSSlide {
+    -webkit-transform: translate(0px, 0px);
+    -ms-transform: translate(0px, 0px);
+    transform: translate(0px, 0px);
+    -webkit-transition: all 1s;
+    -webkit-transition-property: -webkit-transform,height;
+    -moz-transition-property: -moz-transform,height;
+    transition-property: transform,height;
+    -webkit-transition-duration: inherit !important;
+    transition-duration: inherit !important;
+    -webkit-transition-timing-function: inherit !important;
+    transition-timing-function: inherit !important;
+}
+.lSSlideWrapper .lSFade {
+    position: relative;
+}
+.lSSlideWrapper .lSFade > * {
+    position: absolute !important;
+    top: 0;
+    left: 0;
+    z-index: 9;
+    margin-right: 0;
+    width: 100%;
+}
+.lSSlideWrapper.usingCss .lSFade > * {
+    opacity: 0;
+    -webkit-transition-delay: 0s;
+    transition-delay: 0s;
+    -webkit-transition-duration: inherit !important;
+    transition-duration: inherit !important;
+    -webkit-transition-property: opacity;
+    transition-property: opacity;
+    -webkit-transition-timing-function: inherit !important;
+    transition-timing-function: inherit !important;
+}
+.lSSlideWrapper .lSFade > *.active {
+    z-index: 10;
+}
+.lSSlideWrapper.usingCss .lSFade > *.active {
+    opacity: 1;
+}
+/** /!!! End of core css Should not edit !!!/**/
+
+
+
+
+
+/* slider actions */
+.lSAction > a {
+    width: 20px;
+    display: block;
+    top: 50%;
+    height: 32px;
+    cursor: pointer;
+    position: absolute;
+    z-index: 99;
+    margin-top: -26px;
+    opacity: 0.5;
+    background: url('slider-nav.png');
+    -webkit-transition: opacity 0.35s linear 0s;
+    transition: opacity 0.35s linear 0s;
+    box-shadow: none;
+}
+.lSAction > a:hover {
+    opacity: 1;
+}
+.lSAction > .lSPrev {
+    left: 0px;
+    background-position: left center;
+}
+.lSAction > .lSNext {
+    right: 0px;
+    background-position: right center;
+}
+.lSAction > a.disabled {
+    pointer-events: none;
+}
+.cS-hidden {
+    height: 1px;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    overflow: hidden;
+}
+
+
+/* Rtl */
+.lSSlideOuter.lSrtl {
+    direction: rtl;
+}
+.lSSlideOuter .lightSlider, .lSSlideOuter .lSPager {
+    padding-left: 0;
+    list-style: none outside none;
+}
+.lSSlideOuter.lSrtl .lightSlider, .lSSlideOuter.lSrtl .lSPager {
+    padding-right: 0;
+}
+.lSSlideOuter .lightSlider > *,  .lSSlideOuter .lSGallery li {
+    float: left;
+}
+.lSSlideOuter.lSrtl .lightSlider > *,  .lSSlideOuter.lSrtl .lSGallery li {
+    float: right !important;
+}
+/* Rtl */
+
+@-webkit-keyframes rightEnd {
+    0% {
+        left: 0;
+    }
+
+    50% {
+        left: -15px;
+    }
+
+    100% {
+        left: 0;
+    }
+}
+@keyframes rightEnd {
+    0% {
+        left: 0;
+    }
+
+    50% {
+        left: -15px;
+    }
+
+    100% {
+        left: 0;
+    }
+}
+@-webkit-keyframes topEnd {
+    0% {
+        top: 0;
+    }
+
+    50% {
+        top: -15px;
+    }
+
+    100% {
+        top: 0;
+    }
+}
+@keyframes topEnd {
+    0% {
+        top: 0;
+    }
+
+    50% {
+        top: -15px;
+    }
+
+    100% {
+        top: 0;
+    }
+}
+@-webkit-keyframes leftEnd {
+    0% {
+        left: 0;
+    }
+
+    50% {
+        left: 15px;
+    }
+
+    100% {
+        left: 0;
+    }
+}
+@keyframes leftEnd {
+    0% {
+        left: 0;
+    }
+
+    50% {
+        left: 15px;
+    }
+
+    100% {
+        left: 0;
+    }
+}
+@-webkit-keyframes bottomEnd {
+    0% {
+        bottom: 0;
+    }
+
+    50% {
+        bottom: -15px;
+    }
+
+    100% {
+        bottom: 0;
+    }
+}
+@keyframes bottomEnd {
+    0% {
+        bottom: 0;
+    }
+
+    50% {
+        bottom: -15px;
+    }
+
+    100% {
+        bottom: 0;
+    }
+}
+.lSSlideOuter .rightEnd {
+    -webkit-animation: rightEnd 0.3s;
+    animation: rightEnd 0.3s;
+    position: relative;
+}
+.lSSlideOuter .leftEnd {
+    -webkit-animation: leftEnd 0.3s;
+    animation: leftEnd 0.3s;
+    position: relative;
+}
+.lSSlideOuter.vertical .rightEnd {
+    -webkit-animation: topEnd 0.3s;
+    animation: topEnd 0.3s;
+    position: relative;
+}
+.lSSlideOuter.vertical .leftEnd {
+    -webkit-animation: bottomEnd 0.3s;
+    animation: bottomEnd 0.3s;
+    position: relative;
+}
+.lSSlideOuter.lSrtl .rightEnd {
+    -webkit-animation: leftEnd 0.3s;
+    animation: leftEnd 0.3s;
+    position: relative;
+}
+.lSSlideOuter.lSrtl .leftEnd {
+    -webkit-animation: rightEnd 0.3s;
+    animation: rightEnd 0.3s;
+    position: relative;
+}
+/*/  GRab cursor */
+.lightSlider.lsGrab > * {
+    cursor: -webkit-grab;
+    cursor: -moz-grab;
+    cursor: -o-grab;
+    cursor: -ms-grab;
+    cursor: grab;
+}
+.lightSlider.lsGrabbing > * {
+    cursor: move;
+    cursor: -webkit-grabbing;
+    cursor: -moz-grabbing;
+    cursor: -o-grabbing;
+    cursor: -ms-grabbing;
+    cursor: grabbing;
+}

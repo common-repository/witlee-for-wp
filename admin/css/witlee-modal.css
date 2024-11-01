@@ -1,0 +1,261 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+}
+
+body {
+    display: block;
+    font-family: 'Open Sans', 'OpenSans', sans-serif;
+    font-size: 12px;
+    line-height: 1.4em;
+    min-width: 300px;
+    min-height: 300px;
+    position: relative;
+}
+
+.navigation-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 159px;
+    z-index: 150;
+    border-right: 1px solid #ccc;
+    background: #f3f3f3;
+    padding: 20px;
+    font-size: 14px;
+    color: #464646;
+}
+
+h3 {
+    color: #23282d;
+    font-weight: 700;
+    font-size: 14px;
+    margin-top: 0;
+}
+
+.witlee_shortcode_options label {
+    color: #464646;
+}
+
+input[type="text"], input[type="password"], input[type="checkbox"], input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="email"], input[type="month"], input[type="number"], input[type="radio"], input[type="tel"], input[type="time"], input[type="url"], input[type="week"], input[type="search"], select, textarea {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07) inset;
+    color: #32373c;
+    outline: 0 none;
+    transition: border-color 50ms ease-in-out 0s;
+    padding: 6px;
+}
+
+.main {
+    position: absolute;
+    top: 0;
+    left: 200px;
+    right: 0;
+    bottom: 0 ;
+    z-index: 200;
+    height: 100%;
+}
+.main article, .main header {
+    display: block;
+    position: relative;
+    padding: 4px 16px;
+}
+
+.main article {
+    overflow-y: auto;
+    padding-bottom: 50px;
+    position: absolute;
+    top: 60px;
+    left:0;
+    right:0;
+}
+
+a {
+    font-size: 14px;
+    color: #0073aa;
+    text-decoration: none;
+}
+
+.main h1 {
+    font-size: 22px;
+    line-height: 50px;
+    margin: 0;
+    font-weight: 600;
+    color: #23282d;
+}
+.main footer {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 30px;
+    z-index: 100;
+    padding: 10px 0;
+    border-top: 1px solid #ddd;
+    background: #FCFCFC;
+}
+.main footer .inner {
+    padding: 0 16px;
+}
+.text-right {
+    text-align: right;
+}
+button,
+.button {
+    font-family: 'Open Sans', 'OpenSans', sans-serif;
+    border-radius: 3px;
+    border-style: solid;
+    border-width: 1px;
+    box-sizing: border-box;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 13px;
+    height: 28px;
+    line-height: 26px;
+    margin: 0;
+    padding: 0 10px 1px;
+    text-decoration: none;
+    white-space: nowrap;
+}
+.button-primary {
+    background: #0085ba none repeat scroll 0 0;
+    border-color: #0073aa #006799 #006799;
+    box-shadow: 0 1px 0 #006799;
+    color: #fff;
+    text-decoration: none;
+    text-shadow: 0 -1px 1px #006799, 1px 0 1px #006799, 0 1px 1px #006799, -1px 0 1px #006799;
+}
+.button-large{
+    height: 30px;
+    line-height: 28px;
+    padding: 0 12px 2px;
+}
+
+#witlee_shortcode_imagetile label,
+#witlee_shortcode_seed label {
+    display: inline-block;
+}
+
+#witlee_shortcode_imagetile label div,
+#witlee_shortcode_seed label div {
+    width: 125px;
+    height: 125px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 8px;
+
+}
+
+#witlee_shortcode_imagetile label > input,
+#witlee_shortcode_seed label > input { /* HIDE RADIO */
+    visibility: hidden; /* Makes input not-clickable */
+    position: absolute; /* Remove input from document flow */
+}
+
+#witlee_shortcode_imagetile label > input + div,
+#witlee_shortcode_seed label > input + div { /* IMAGE STYLES */
+    cursor:pointer;
+}
+
+#witlee_shortcode_imagetile label > input:checked + div,
+#witlee_shortcode_seed label > input:checked + div { /* (RADIO CHECKED) IMAGE STYLES */
+    /*border: 4px solid #0073AA;*/
+    position: relative;
+    box-shadow: 0 0 0 2px #fff, 0 0 0 7px #0073aa;
+}
+
+#witlee_shortcode_imagetile label > input:checked + div:after,
+#witlee_shortcode_seed label > input:checked + div:after {
+    display: block;
+    content: '';
+    background-color: #0073aa;
+    box-shadow: 0 0 0 1px #fff, 0 0 0 2px #0073aa;
+    height: 24px;
+    outline: 0 none;
+    padding: 0;
+    position: absolute;
+    right: -8px;
+    top: -8px;
+    width: 24px;
+    z-index: 10;
+
+}
+
+#witlee_shortcode_imagetile label > input:checked + div:before,
+#witlee_shortcode_seed label > input:checked + div:before {
+    display: block;
+    content: '';
+    height: 20px;
+    outline: 0 none;
+    padding: 0;
+    position: absolute;
+    right: -8px;
+    top: -4px;
+    width: 20px;
+    z-index: 15;
+    background-image: url("../../../../../wp-includes/images/uploader-icons.png");
+    background-repeat: no-repeat;
+    background-position: -21px;
+}
+
+.error-message {
+    background: #fff none repeat scroll 0 0;
+    border-left: 4px solid #dc3232;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
+    margin: 5px 15px 2px;
+    padding: 12px 12px;
+    font-size: 13px;
+}
+
+.error-message p {
+    font-size: 13px;
+}
+
+.witlee-disabled {
+    cursor: pointer;
+}
+
+.witlee-disabled div {
+    padding: 10px;
+    position: relative;
+}
+
+.witlee-disabled div:after {
+    content: '';
+    display: block;
+    background: rgba( 255,255,255,.8 );
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 5;
+}
+
+.witlee-disabled div p {
+    position: relative;
+    z-index: 10;
+}
+
+.screen-reader-text, .screen-reader-text span, .ui-helper-hidden-accessible {
+    border: 0 none;
+    clip: rect(0px, 0px, 0px, 0px);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    word-wrap: normal !important;
+}
+
+.separator {
+    border-top: 1px solid #ddd;
+    height: 0;
+    margin: 12px 20px;
+    padding: 0;
+}
